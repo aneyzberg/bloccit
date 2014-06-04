@@ -2,6 +2,8 @@
 
 Made with my mentor at [Bloc](http://bloc.io).
 
+App name : [anna-bloccit](http://anna-bloccit.herokuapp.com/)
+
 == README
 
 This README would normally document whatever steps are necessary to get the
