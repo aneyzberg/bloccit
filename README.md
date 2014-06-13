@@ -4,6 +4,8 @@ Made with my mentor at [Bloc](http://bloc.io).
 
 App name : [anna-bloccit](http://anna-bloccit.herokuapp.com/)
 
+Set up: Using devise for Authentication. Refer to config/application.yml and devise.rb
+
 == README
 
 This README would normally document whatever steps are necessary to get the
