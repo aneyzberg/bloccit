@@ -17,13 +17,13 @@ class TopicsController < ApplicationController
 
   def edit
     @topic = Topic.find(params[:id])
-    authorize @post
+    authorize @topic
   end
 
   def create
-   @topic = Topic.new(params.require(:topic).permit(:name, :description, :public))
-   authorize @topic
-   if @topic.save
+    @topic = Topic.new(params.require(:topic).permit(:name, :description, :public))
+    authorize @topic
+    if @topic.save
       redirect_to @topic, notice: "Topic was saved successfully."
     else
       flash[:error] = "Error creating topic. Please try again."
@@ -31,10 +31,10 @@ class TopicsController < ApplicationController
     end
   end
 
-def update
-  @topic = Topic.find(params[:id])
-  authorize @topic
-  if @topic.update_attributes(params.require(:topic).permit(:name, :description, :public))
+  def update
+    @topic = Topic.find(params[:id])
+    authorize @topic
+    if @topic.update_attributes(params.require(:topic).permit(:name, :description, :public))
       redirect_to @topic
     else
       flash[:error] = "Error saving topic. Please try again"
@@ -42,5 +42,3 @@ def update
     end
   end
 end
-
- 
