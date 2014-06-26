@@ -12,4 +12,9 @@ class TopicPolicy < ApplicationPolicy
   def update?
     create?
   end
+
+  def destoy?
+    update?
+  end
+  
 end
