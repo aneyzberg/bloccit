@@ -20,3 +20,21 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="col-md-8">
+<%= render partial: 'comments/comment', collection: @comments, locals: { topic: @topic, post: @post} %>
+
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-8">
+
+   <% if policy(@comment).create? %>
+     <hr/>
+      <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
+    <% end %>
+  </div>
+</div>
+
