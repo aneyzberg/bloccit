@@ -6,8 +6,11 @@
 
   has_many :posts
   has_many :comments
+  has_many :votes, dependent: :destroy
 
 mount_uploader :avatar, AvatarUploader
+
+
 
   def role?(base_role)
   role == base_role.to_s
