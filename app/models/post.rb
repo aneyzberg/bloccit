@@ -6,6 +6,8 @@ class Post < ActiveRecord::Base
 
 default_scope { order('rank DESC') }
 
+after_create :create_vote
+
   mount_uploader :image, ImageUploader
 
   def up_votes
@@ -31,4 +33,11 @@ def update_rank
   validates :body, length: { minimum: 20 }, presence: true
   validates :topic, presence: true
   validates :user, presence: true
+
+
+  private
+
+ def create_vote
+    user.votes.create(value: 1, post: self)
+  end
 end
