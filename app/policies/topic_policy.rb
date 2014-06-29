@@ -16,5 +16,9 @@ class TopicPolicy < ApplicationPolicy
   def destoy?
     update?
   end
+
+  def show?
+    record.public? || user.present?
+  end
   
 end
