@@ -8,13 +8,14 @@ class CommentsController < ApplicationController
     @comments = @post.comments
 
 
+
     # @comment = @Comment.new(comment_params)
     # @comment.user = current_user
     # @comment.post = @post
 
     @comment = current_user.comments.build(comment_params)
     @comment.post = @post
-    #@new_comment = Comment.new
+    @new_comment = Comment.new
 
     authorize @comment
 
