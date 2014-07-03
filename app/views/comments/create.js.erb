@@ -4,4 +4,4 @@
   $('.js-comments-count').html("<%= @post.comments.count %> Comments");
 <% else %>
   $('.new_comment').html("<%= escape_javascript(render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment }) %>");
-<% end %
+<% end %>
